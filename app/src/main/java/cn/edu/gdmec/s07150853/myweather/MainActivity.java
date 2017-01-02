@@ -1,10 +1,12 @@
 package cn.edu.gdmec.s07150853.myweather;
 
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.res.AssetManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton settingBtn;
 
     private ImageButton refreshBtn;
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onClick(View v) {
                 String cityName=((TextView)seft.findViewById(R.id.city)).getText().toString();
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private class ChooseCityListenner implements DialogInterface.OnClickListener{
 
+        @TargetApi(Build.VERSION_CODES.CUPCAKE)
         @Override
         public void onClick(DialogInterface dialog, int which) {
             //获取选中的城市
